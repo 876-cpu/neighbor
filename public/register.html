@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Register</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+  <a href="/">Neighbor</a>
+  <nav><a href="/login.html">Log in</a></nav>
+</header>
+<main>
+  <div class="card">
+    <h1>Create an account</h1>
+    <p class="hint">Only email addresses on the approved list can register. If yours isn't approved yet, ask the seller to add you.</p>
+    <div class="message" id="msg"></div>
+    <form id="form">
+      <div>
+        <label for="name">Name</label>
+        <input id="name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+      </div>
+      <div>
+        <label for="password">Password (min 10 characters)</label>
+        <input id="password" type="password" minlength="10" required />
+      </div>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/register.js"></script>
+</body>
+</html>

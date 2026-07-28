@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Seller setup</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header><a href="/">Neighbor</a></header>
+<main>
+  <div class="card">
+    <h1>Create the seller account</h1>
+    <p class="hint">One-time setup. Requires the SELLER_SETUP_TOKEN from your server's .env file. This only works once — after the seller account exists, this form always rejects.</p>
+    <div class="message" id="msg"></div>
+    <form id="form">
+      <div>
+        <label for="setupToken">Setup token</label>
+        <input id="setupToken" required />
+      </div>
+      <div>
+        <label for="name">Name</label>
+        <input id="name" required />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input id="email" type="email" required />
+      </div>
+      <div>
+        <label for="password">Password (min 12 characters)</label>
+        <input id="password" type="password" minlength="12" required />
+      </div>
+      <button type="submit">Create seller account</button>
+    </form>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/seller-setup.js"></script>
+</body>
+</html>

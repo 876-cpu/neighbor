@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Cart</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+  <a href="/">Neighbor</a>
+  <nav><a href="/">Continue shopping</a></nav>
+</header>
+<main>
+  <h1>Your cart</h1>
+  <div class="message" id="msg"></div>
+  <div class="card" id="cart-items">Loading…</div>
+  <div class="card" id="cart-total" style="display:none">
+    <div class="list-row"><strong>Total</strong><strong id="total-amount"></strong></div>
+    <button id="checkout-btn">Proceed to checkout</button>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/cart-page.js"></script>
+</body>
+</html>

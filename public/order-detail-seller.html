@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Order detail</title>
+<link rel="stylesheet" href="/css/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  #map { height: 320px; border-radius: 8px; margin-top: 1rem; }
+</style>
+</head>
+<body>
+<header>
+  <a href="/">Neighbor</a>
+  <nav><a href="/seller.html">Dashboard</a></nav>
+</header>
+<main>
+  <div class="card">
+    <h1>Order detail</h1>
+    <div id="details">Loading…</div>
+    <div id="map"></div>
+    <p class="hint" id="location-note"></p>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">Update status</h2>
+    <div style="display:flex;gap:0.5rem;flex-wrap:wrap">
+      <button data-status="out_for_delivery">Out for delivery</button>
+      <button data-status="delivered">Delivered</button>
+      <button class="secondary" data-status="cancelled">Cancel order</button>
+    </div>
+  </div>
+</main>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/order-detail-seller.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Seller dashboard</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+  <a href="/">Neighbor</a>
+  <nav><a href="#" id="logout">Log out</a></nav>
+</header>
+<main>
+  <h1>Seller dashboard</h1>
+  <div class="message" id="msg"></div>
+
+  <div class="card">
+    <h2 style="margin-top:0">Orders</h2>
+    <p class="hint">Click an order to see delivery details and live location.</p>
+    <div id="orders"></div>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">Approved contact list (whitelist)</h2>
+    <p class="hint">Only these emails can register as buyers.</p>
+    <div id="whitelist"></div>
+    <form id="wlForm">
+      <div>
+        <label for="wlEmail">Add email (or "@company.com" for a whole domain)</label>
+        <input id="wlEmail" type="text" required />
+      </div>
+      <button type="submit">Add to whitelist</button>
+    </form>
+  </div>
+
+  <div class="card">
+    <h2 style="margin-top:0">Products</h2>
+    <div id="products"></div>
+    <form id="prodForm">
+      <div>
+        <label for="title">Title</label>
+        <input id="title" required />
+      </div>
+      <div>
+        <label for="description">Description</label>
+        <textarea id="description" rows="2"></textarea>
+      </div>
+      <div>
+        <label for="price">Price (USD)</label>
+        <input id="price" type="number" step="0.01" min="0" required />
+      </div>
+      <div>
+        <label for="stock">Stock</label>
+        <input id="stock" type="number" min="0" value="1" />
+      </div>
+      <button type="submit">Add product</button>
+    </form>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/seller.js"></script>
+</body>
+</html>

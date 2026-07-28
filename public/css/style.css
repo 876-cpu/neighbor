@@ -1,0 +1,100 @@
+:root {
+  --ink: #1a1a1a;
+  --paper: #faf9f6;
+  --accent: #2f5d50;
+  --accent-light: #eaf1ee;
+  --danger: #a3312a;
+  --border: #ddd6c9;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--border);
+  background: white;
+}
+
+header a { color: var(--accent); text-decoration: none; font-weight: 600; }
+header nav a { margin-left: 1.25rem; }
+
+main {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+h1 { font-size: 1.6rem; }
+
+.card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+form { display: flex; flex-direction: column; gap: 0.9rem; }
+
+label { font-weight: 600; font-size: 0.9rem; }
+
+input, textarea {
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background: var(--accent);
+  color: white;
+  border: none;
+  padding: 0.7rem 1rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { opacity: 0.92; }
+button.secondary { background: transparent; color: var(--danger); border: 1px solid var(--danger); }
+
+.message {
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  display: none;
+  font-size: 0.9rem;
+}
+.message.error { background: #fbeceb; color: var(--danger); }
+.message.success { background: var(--accent-light); color: var(--accent); }
+
+.product {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.product:last-child { border-bottom: none; }
+
+.price { font-weight: 700; color: var(--accent); }
+
+.list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+small.hint { color: #777; }

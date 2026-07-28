@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Order tracking</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+  <a href="/">Neighbor</a>
+  <nav><a href="/">Home</a></nav>
+</header>
+<main>
+  <div class="card">
+    <h1>Order placed</h1>
+    <p>Status: <strong id="status">—</strong></p>
+    <p class="hint" id="sharing-note">Sharing your live location so the seller can find you…</p>
+    <button id="stop-btn" class="secondary">Stop sharing location</button>
+  </div>
+</main>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/api.js"></script>
+<script src="/js/order-tracking.js"></script>
+</body>
+</html>

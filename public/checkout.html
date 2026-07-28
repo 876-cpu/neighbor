@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Neighbor — Checkout</title>
+<link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+<header>
+  <a href="/">Neighbor</a>
+  <nav><a href="/cart.html">Back to cart</a></nav>
+</header>
+<main>
+  <div class="card">
+    <h1>Checkout</h1>
+    <p class="hint">We'll ask to share your live location so the seller can find you for delivery. It updates automatically until your order is delivered — you can stop sharing at any time from the tracking page.</p>
+    <div class="message" id="msg"></div>
+    <form id="form">
+      <div>
+        <label for="phone">Phone number</label>
+        <input id="phone" type="tel" placeholder="e.g. +1 555 123 4567" required />
+      </div>
+      <button type="submit">Share location &amp; place order</button>
+    </form>
+  </div>
+</main>
+<script src="/js/api.js"></script>
+<script src="/js/cart.js"></script>
+<script src="/js/checkout.js"></script>
+</body>
+</html>
