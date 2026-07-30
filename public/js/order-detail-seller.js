@@ -51,7 +51,7 @@ async function load() {
   }
 }
 
-const socket = io({ withCredentials: true });
+const socket = io(window.location.origin, { withCredentials: true, transports: ["websocket", "polling"] });
 socket.on('connect', () => socket.emit('order:join', { orderId }));
 
 socket.on('location:update', ({ lat, lng, updatedAt }) => {
