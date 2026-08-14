@@ -4,7 +4,7 @@
   "description": "Neighbor — a single-seller online storefront with whitelist-gated registration",
   "main": "src/server.js",
   "scripts": {
-    "start": "node src/server.js",
+    "start": "node init.js",
     "dev": "node --watch src/server.js",
     "seed:whitelist": "node src/utils/seedWhitelist.js"
   },
