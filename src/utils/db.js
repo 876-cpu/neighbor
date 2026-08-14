@@ -1,18 +1,22 @@
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "..", "data");
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
+// Auto-create the data folder on boot so we don't crash
+if (!fs.existsSync(DATA_DIR)) {
+  fs.mkdirSync(DATA_DIR, { recursive: true });
+}
 
 // Minimal file-based persistence so the project runs with zero external
 // services. For real production use, swap this for Postgres/SQLite/etc —
 // the function signatures here are intentionally small so that's an easy
 // later step; nothing else in the app needs to change.
 
-const fs = require('fs');
-const path = require('path');
-
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
 function filePath(name) {
   return path.join(DATA_DIR, `${name}.json`);
 }
@@ -24,10 +28,10 @@ function readJSON(name, fallback) {
     return fallback;
   }
   const raw = fs.readFileSync(p, 'utf8');
-  return raw.trim() ? JSON.parse(raw) : fallback;
+  return raw.trim()? JSON.parse(raw) : fallback;
 }
 
-// Naive write queue per file so concurrent requests can't corrupt the JSON.
+// Naive write queue per file so concurrent requests can't corrupt it
 const queues = {};
 function writeJSON(name, data) {
   const p = filePath(name);
@@ -45,4 +49,4 @@ function writeJSON(name, data) {
   return next;
 }
 
-module.exports = { readJSON, writeJSON };
+export { readJSON, writeJSON, DATA_DIR };
