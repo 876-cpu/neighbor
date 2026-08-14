@@ -1,3 +1,9 @@
+import fs from "fs";
+import path from "path";
+
+const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "..", "data");
+if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+
 // Minimal file-based persistence so the project runs with zero external
 // services. For real production use, swap this for Postgres/SQLite/etc —
 // the function signatures here are intentionally small so that's an easy
