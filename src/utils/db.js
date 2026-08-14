@@ -1,37 +1,31 @@
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
+const fs = require('fs');
+const path = require('path');
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const DATA_DIR = process.env.DATA_DIR || '/data';
 
-const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, "..", "data");
-
-// Auto-create the data folder on boot so we don't crash
+// 1. Auto-create the persistent folder
 if (!fs.existsSync(DATA_DIR)) {
   fs.mkdirSync(DATA_DIR, { recursive: true });
 }
 
-// Minimal file-based persistence so the project runs with zero external
-// services. For real production use, swap this for Postgres/SQLite/etc —
-// the function signatures here are intentionally small so that's an easy
-// later step; nothing else in the app needs to change.
+// 2. Pre-create all files on boot so Railway doesn't crash on first 'open'
+['users', 'products', 'orders', 'whitelist'].forEach(name => {
+  const p = path.join(DATA_DIR, `${name}.json`);
+  if (!fs.existsSync(p)) {
+    fs.writeFileSync(p, '[]');
+  }
+});
 
 function filePath(name) {
   return path.join(DATA_DIR, `${name}.json`);
 }
 
-function readJSON(name, fallback) {
+function readJSON(name, fallback = []) {
   const p = filePath(name);
-  if (!fs.existsSync(p)) {
-    fs.writeFileSync(p, JSON.stringify(fallback, null, 2));
-    return fallback;
-  }
   const raw = fs.readFileSync(p, 'utf8');
   return raw.trim()? JSON.parse(raw) : fallback;
 }
 
-// Naive write queue per file so concurrent requests can't corrupt it
 const queues = {};
 function writeJSON(name, data) {
   const p = filePath(name);
@@ -49,4 +43,4 @@ function writeJSON(name, data) {
   return next;
 }
 
-export { readJSON, writeJSON, DATA_DIR };
+module.exports = { readJSON, writeJSON, DATA_DIR };
