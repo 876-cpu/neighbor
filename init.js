@@ -8,7 +8,7 @@ if (!fs.existsSync(dataDir)) {
   fs.mkdirSync(dataDir, { recursive: true });
 }
 
-const defaultWhitelist = ["clementmanyembere@gmail.co"];
+const defaultWhitelist = ["clementmanyembere@gmail.com"];
 
 if (!fs.existsSync(whitelistPath)) {
   fs.writeFileSync(whitelistPath, JSON.stringify(defaultWhitelist, null, 2));
