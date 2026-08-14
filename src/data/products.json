@@ -1,0 +1,50 @@
+[
+  {
+    "id": "prod_1785189173256_svbl8x",
+    "title": "Tea",
+    "description": "Bnln",
+    "priceCents": 1000,
+    "stock": 500,
+    "createdAt": "2026-07-27T21:52:53.256Z"
+  },
+  {
+    "id": "prod_1785189266471_h4wt1j",
+    "title": "Tea_astr",
+    "description": "Green wrap you already know how it go",
+    "priceCents": 1000,
+    "stock": 500,
+    "createdAt": "2026-07-27T21:54:26.472Z"
+  },
+  {
+    "id": "prod_1785189376706_lxelpj",
+    "title": "Blnts vanila",
+    "description": "Smells good",
+    "priceCents": 100,
+    "stock": 1500,
+    "createdAt": "2026-07-27T21:56:16.706Z"
+  },
+  {
+    "id": "prod_1785189430670_ry4e1i",
+    "title": "Blunts blueberries",
+    "description": "Blueberry",
+    "priceCents": 100,
+    "stock": 1500,
+    "createdAt": "2026-07-27T21:57:10.670Z"
+  },
+  {
+    "id": "prod_1785189559695_74ts7u",
+    "title": "Brwn li",
+    "description": "Slow",
+    "priceCents": 100,
+    "stock": 1500,
+    "createdAt": "2026-07-27T21:59:19.695Z"
+  },
+  {
+    "id": "prod_1785189616300_96p9fk",
+    "title": "White li",
+    "description": "Fast",
+    "priceCents": 100,
+    "stock": 1500,
+    "createdAt": "2026-07-27T22:00:16.300Z"
+  }
+]
