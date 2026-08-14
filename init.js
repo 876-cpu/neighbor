@@ -1,25 +1,21 @@
-const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const DATA_DIR = '/data';
-const WHITELIST_PATH = path.join(DATA_DIR, 'whitelist.json');
+const dataDir = '/data';
+const whitelistPath = path.join(dataDir, 'whitelist.json');
 
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+if (!fs.existsSync(dataDir)) {
+  fs.mkdirSync(dataDir, { recursive: true });
+}
 
-// Use python to write the file so we control the content
-const pyCode = `
-import json, os
-p = '/data/whitelist.json'
-os.makedirs('/data', exist_ok=True)
-with open(p, 'w') as f:
-    json.dump(["clementmanyembere@gmail.co"], f, indent=2)
-print("whitelist created")
-`;
+const defaultWhitelist = ["clementmanyembere@gmail.co"];
 
-fs.writeFileSync('temp_init.py', pyCode);
-execSync('python3 temp_init.py');
-fs.unlinkSync('temp_init.py');
+if (!fs.existsSync(whitelistPath)) {
+  fs.writeFileSync(whitelistPath, JSON.stringify(defaultWhitelist, null, 2));
+  console.log('whitelist created');
+} else {
+  console.log('whitelist already exists');
+}
 
 console.log('Init done. Starting server...');
 require('./src/server.js');
