@@ -1,10 +1,10 @@
 [
   {
-    "id": "usr_1785152782679_seller",
+    "id": "usr_1_seller",
     "email": "clementmanyembere@gmail.com",
-    "name": "Neighbor",
-    "passwordHash": "$2a$12$fv.41G0dxXX7D7xzZKhy.eipqHuMk8eJnZGaA6kEc6kuHSB4ncNiW",
+    "name": "Clement",
+    "passwordHash": "$2a$12$3nN3ljRhyNXE5lFNLeOkgOv85/s6C7fkFKVDnBbyKiMj/xRnZaUN.",
     "role": "seller",
-    "createdAt": "2026-07-27T11:46:22.679Z"
+    "createdAt": "2026-08-14T14:36:37.073Z"
   }
 ]
