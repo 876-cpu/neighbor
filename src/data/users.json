@@ -1,0 +1,10 @@
+[
+  {
+    "id": "usr_seller_fixed",
+    "email": "clementmanyembere@gmail.com",
+    "name": "Neighbor",
+    "passwordHash": "$2b$12$/Luvp7UM/aKyM7FFCxVjgOu1oA4flk8R2dGyriiTawkTV9gj4DTGm",
+    "role": "seller",
+    "createdAt": "2026-08-20T00:19:18.088395"
+  }
+]
