@@ -21,7 +21,8 @@ const app = express();
 // scripts live in separate .js files (never inline), so the default
 // 'self' policy for scripts works. We additionally allow the map tiles
 // (OpenStreetMap) and the Leaflet library from a CDN.
-app.use(
+app.set('trust proxy', 1);
+ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
